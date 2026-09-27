@@ -1,9 +1,15 @@
 import CollectionView from './CollectionView.jsx'
+import { API_BASE_URL } from '../api.js'
+
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+  : `${API_BASE_URL}/api/activities/`
 
 export default function Activities() {
   return (
     <CollectionView
-      endpoint="/api/activities/"
+      endpoint={endpoint}
       title="Activities"
       description="Training sessions recorded by OctoFit members."
       primary={{ label: 'Activity', value: (activity) => activity.type }}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { apiUrl, collectionFromResponse } from '../api.js'
+import { collectionFromResponse } from '../api.js'
 
 function displayValue(value) {
   if (value === null || value === undefined || value === '') return '—'
@@ -23,7 +23,7 @@ export default function CollectionView({ endpoint, title, description, primary, 
       setError('')
 
       try {
-        const response = await fetch(apiUrl(endpoint), { signal: controller.signal })
+        const response = await fetch(endpoint, { signal: controller.signal })
         const payload = await response.json()
         if (!response.ok) {
           throw new Error(payload.error || `Request failed (${response.status})`)

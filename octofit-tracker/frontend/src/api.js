@@ -4,10 +4,6 @@ export const API_BASE_URL = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
   : 'http://localhost:8000'
 
-export function apiUrl(endpoint) {
-  return `${API_BASE_URL}${endpoint}`
-}
-
 export function collectionFromResponse(payload) {
   if (Array.isArray(payload)) return payload
   if (!payload || typeof payload !== 'object') return []
