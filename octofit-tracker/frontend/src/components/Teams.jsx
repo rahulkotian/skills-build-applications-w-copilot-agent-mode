@@ -3,7 +3,7 @@ import CollectionView from './CollectionView.jsx'
 export default function Teams() {
   return (
     <CollectionView
-      resource="teams"
+      endpoint="/api/teams/"
       title="Teams"
       description="Squads competing across the OctoFit community."
       primary={{ label: 'Team', value: (team) => team.name }}

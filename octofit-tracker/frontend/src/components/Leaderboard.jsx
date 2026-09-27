@@ -3,7 +3,7 @@ import CollectionView from './CollectionView.jsx'
 export default function Leaderboard() {
   return (
     <CollectionView
-      resource="leaderboard"
+      endpoint="/api/leaderboard/"
       title="Leaderboard"
       description="Member standings ranked by earned points."
       primary={{ label: 'Member', value: (entry) => entry.user }}

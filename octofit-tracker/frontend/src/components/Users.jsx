@@ -3,7 +3,7 @@ import CollectionView from './CollectionView.jsx'
 export default function Users() {
   return (
     <CollectionView
-      resource="users"
+      endpoint="/api/users/"
       title="Users"
       description="People taking part in the OctoFit community."
       primary={{ label: 'Member', value: (user) => user.name }}

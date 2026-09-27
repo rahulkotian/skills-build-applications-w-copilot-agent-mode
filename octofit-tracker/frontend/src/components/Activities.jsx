@@ -3,7 +3,7 @@ import CollectionView from './CollectionView.jsx'
 export default function Activities() {
   return (
     <CollectionView
-      resource="activities"
+      endpoint="/api/activities/"
       title="Activities"
       description="Training sessions recorded by OctoFit members."
       primary={{ label: 'Activity', value: (activity) => activity.type }}

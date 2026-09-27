@@ -10,7 +10,7 @@ function displayValue(value) {
   return String(value)
 }
 
-export default function CollectionView({ resource, title, description, primary, fields }) {
+export default function CollectionView({ endpoint, title, description, primary, fields }) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -23,7 +23,7 @@ export default function CollectionView({ resource, title, description, primary, 
       setError('')
 
       try {
-        const response = await fetch(apiUrl(resource), { signal: controller.signal })
+        const response = await fetch(apiUrl(endpoint), { signal: controller.signal })
         const payload = await response.json()
         if (!response.ok) {
           throw new Error(payload.error || `Request failed (${response.status})`)
@@ -39,7 +39,7 @@ export default function CollectionView({ resource, title, description, primary, 
 
     loadCollection()
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint])
 
   return (
     <section className="collection-view">

@@ -3,7 +3,7 @@ import CollectionView from './CollectionView.jsx'
 export default function Workouts() {
   return (
     <CollectionView
-      resource="workouts"
+      endpoint="/api/workouts/"
       title="Workouts"
       description="Suggested sessions and their training details."
       primary={{ label: 'Workout', value: (workout) => workout.title }}

@@ -33,7 +33,7 @@ function Overview() {
           </div>
         ))}
       </div>
-      <p className="api-origin"><span className="status-dot" /> API: {API_BASE_URL}</p>
+      <p className="api-origin"><span className="status-dot" /> API: {API_BASE_URL}/api</p>
     </section>
   )
 }
